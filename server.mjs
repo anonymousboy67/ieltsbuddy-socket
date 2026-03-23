@@ -7,7 +7,11 @@ const PORT = process.env.PORT || 3001;
 const httpServer = createServer();
 const io = new Server(httpServer, {
   cors: {
-    origin: ["http://localhost:3000", "https://ieltsbuddyv2.vercel.app"],
+    origin: [
+      "http://localhost:3000",
+      "https://ieltsbuddyv2.vercel.app",
+      /\.vercel\.app$/
+    ],
     methods: ["GET", "POST"]
   }
 });
